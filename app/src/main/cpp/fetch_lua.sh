@@ -13,5 +13,5 @@ else
 fi
 cp "$SRC"/*.c "$SRC"/*.h lua/
 rm -rf _lua_tmp lua-5.3.6 lua.tgz
-grep -q '"Lua 5.3' lua/lua.h || { echo "unexpected Lua version"; exit 1; }
+grep -q 'LUA_VERSION_MINOR.*"3"' lua/lua.h || { echo "unexpected Lua version"; exit 1; }
 echo "Lua sources ready in $(pwd)/lua"
